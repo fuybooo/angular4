@@ -28,12 +28,10 @@ export class HeroesComponent implements OnInit {
   };
 
   getHeroes(): void {
-    // 慢一点
-    // this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
-  gotoDetail(): void {
+  gotoDetail(param: string): void {
     this.router.navigate(['/detail', this.selectedHero.id]);
   }
 

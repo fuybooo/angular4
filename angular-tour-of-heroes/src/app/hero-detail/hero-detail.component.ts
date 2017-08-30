@@ -3,7 +3,7 @@ import {Hero} from "../app.hero";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {Location} from "@angular/common";
 import {HeroService} from "../services/hero.service";
-import 'rxjs';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-hero-detail',
@@ -20,8 +20,7 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id')))
-      .subscribe(hero => this.hero = hero);
+    this.route.params.subscribe((params: ParamMap) => this.heroService.getHero(+params['id']).subscribe(hero => this.hero = hero));
   }
   goBack(): void {
     this.location.back();

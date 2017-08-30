@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {HeroDetailComponent} from "../hero-detail/hero-detail.component";
 import {DashboardComponent} from "../dashboard/dashboard.component";
 import {HeroesComponent} from "../heroes/heroes.component";
@@ -18,4 +18,5 @@ const routeConfig: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
