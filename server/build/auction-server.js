@@ -4,7 +4,7 @@ var express = require("express");
 var path = require("path");
 var ws_1 = require("ws");
 var app = express();
-app.use('/', express.static(path.join(__dirname, '..', 'client')));
+app.use('/', express.static(path.join(__dirname, '..', 'emm')));
 var Product = (function () {
     function Product(id, title, price, rating, desc, categories) {
         this.id = id;
